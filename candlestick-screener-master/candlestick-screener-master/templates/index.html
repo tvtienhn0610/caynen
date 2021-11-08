@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        body { font-family: arial; margin: 20px; }
+        td { padding: 5px; }
+        .bullish { background: green; color: white; }
+        .bearish { background: red; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Technical Scanner</h1>
+
+    <table>
+        <tr>
+            <th>symbol</th>
+            <th>pattern</th>
+            <th>point</th>
+            <th>singal</th>
+        </tr>
+        {% for data in listdata %}
+            <tr>
+                <td>
+                    {{ data.name }}
+                </td>
+                <td>
+                    {{ data.pattern }}
+                </td>
+                <td >
+                    {{ data.last }}
+                </td>
+                <td class="{{ data.result }}">
+                    {{ data.result }}
+                </td>
+        
+        {% endfor %}
+    </table>
+</body>
+</html>
